@@ -1,9 +1,16 @@
 type: "diff_drive_controller/DiffDriveController"
 publish_rate: 50
 
+# Names of the joints for the robot. 
+# These should be the names of the joint that are used to control the robot's movement.
+
 left_wheel: ['left_front_wheel_joint', 'left_back_wheel_joint']
 right_wheel: ['right_front_wheel_joint', 'right_back_wheel_joint']
 
+
+# Wheel radius and separation distance for the robot. These values should be
+# tuned to your robot's sample odometry data, but these values are a good place
+# to start
 wheel_separation: 0.44
 
 # Odometry covariances for the encoder output of the robot. These values should
