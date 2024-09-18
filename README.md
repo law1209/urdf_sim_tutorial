@@ -6,17 +6,23 @@ https://wiki.ros.org/urdf/Tutorials/Using%20a%20URDF%20in%20Gazebo
     roslaunch urdf_sim_tutorial gazebo.launch
 
 # Gazebo Plugin
+    roscd urdf_sim_tutorial
     roslaunch urdf_sim_tutorial gazebo.launch model:=urdf/09-publishjoints.urdf.xacro
 
 # Spawning Controllers with URDF
     roslaunch urdf_sim_tutorial 09-joints.launch 
 
-# Transmissions
+# First Transmission
+    roscd urdf_sim_tutorial
     roslaunch urdf_sim_tutorial 09-joints.launch model:=urdf/10-firsttransmission.urdf.xacro
 
 # Joint Control
-    roslaunch urdf_sim_tutorial 10-head.launch 
+    roscd urdf_sim_tutorial
+    roslaunch urdf_sim_tutorial 10-head.launch
+    rostopic pub /r2d2_head_controller/command std_msgs/Float64 "data: -0.707"
+
     roslaunch urdf_sim_tutorial 10-head.launch model:=urdf/11-limittransmission.urdf.xacro
+    rostopic pub /r2d2_head_controller/command std_msgs/Float64 "data: -0.707"
 
 # Another Controller
     roslaunch urdf_sim_tutorial 12-gripper.launch
