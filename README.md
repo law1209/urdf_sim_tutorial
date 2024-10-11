@@ -2,6 +2,14 @@
 See the tutorials over at http://wiki.ros.org/urdf_tutorial
 https://wiki.ros.org/urdf/Tutorials/Using%20a%20URDF%20in%20Gazebo
 
+## Install
+
+Please install the necessary packages:
+
+    sudo apt-get install ros-noetic-ros-control 
+    sudo apt-get install ros-noetic-ros-controllers
+
+
 # Nonfunctional Gazebo Interface
     roslaunch urdf_sim_tutorial gazebo.launch
 
@@ -38,6 +46,7 @@ rostopic pub  /r2d2_gripper_controller/command std_msgs/Float64MultiArray "layou
 data: [0, 0.5, 0.5]"
 
 # The Wheels on the Droid Go Round and Round
+roscd urdf_sim_tutorial
 roslaunch urdf_sim_tutorial 13-diffdrive.launch
 
 rostopic pub /r2d2_diff_drive_controller/cmd_vel geometry_msgs/Twist "linear:
