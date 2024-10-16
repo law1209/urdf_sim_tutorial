@@ -31,7 +31,7 @@ Please install the necessary packages:
 
     roslaunch urdf_sim_tutorial 10-head.launch model:=urdf/11-limittransmission.urdf.xacro
     rostopic pub /r2d2_head_controller/command std_msgs/Float64 "data: -0.707"
-# Please note that the command here is the setpoint, not the actual position of the joint. The actual position of the joint is published on the /r2d2_head_controller/state topic. The commands sent to the robot is published on the /r2d2_head_controller/command topic.
+## Please note that the command here is the setpoint, not the actual position of the joint. The actual position of the joint is published on the /r2d2_head_controller/state topic. The commands sent to the robot is published on the /r2d2_head_controller/command topic.
 
 
 # Another Controller 12-gripper.launch
